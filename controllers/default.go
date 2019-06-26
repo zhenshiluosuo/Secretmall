@@ -40,3 +40,11 @@ func (this *RegController) Post() {
 		this.Redirect("/myaccount", 301)
 	}
 }
+
+type ChaoshiController struct {
+	beego.Controller
+}
+
+func (this *ChaoshiController) Get() {
+	this.TplName = "itemlist.tpl"
+}

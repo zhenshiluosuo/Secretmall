@@ -8,4 +8,5 @@ import (
 func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/myaccount", &controllers.RegController{})
+	beego.Router("/chaoshi", &controllers.ChaoshiController{})
 }

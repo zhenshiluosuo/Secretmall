@@ -13,15 +13,12 @@
             <div id="container">
                 <div class="search bar6">
                     <form>
-                        <input type="text" placeholder="试试搜搜：家用电茶炉" name="cname">
+                        <input type="text" placeholder="试试搜搜：在世真龙" name="cname">
                         <button type="submit"></button>
                     </form>
                 </div>
             </div>
         </form>
     </header>
-    <div>
-        卡萨活佛感到舒服的沙发
-    </div>
 </body>
 </html>
