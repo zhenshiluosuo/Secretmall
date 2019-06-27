@@ -10,9 +10,10 @@ type User struct {
 }
 
 type Cert struct {
-	Id     int   `orm:"auto"`
-	UserId *User `orm:"rel(fk)"`
-	ItemId *Item `orm:"rel(fk)"`
+	Id     int `orm:"auto"`
+	UserId int `orm:"column(user_id)"`
+	ItemId int `orm:"column(item_id)"`
+	Amount int
 }
 type Item struct {
 	Id          int `orm:"auto"`

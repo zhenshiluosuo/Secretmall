@@ -3,9 +3,12 @@ package controllers
 import (
 	"fmt"
 	"github.com/astaxie/beego"
-	"secret/models"
-	_ "secret/utils"
 	"strings"
+
+	//"secret/models"
+	"secret/Secretmall/models"
+	//_ "secret/utils"
+	_ "secret/Secretmall/utils"
 )
 
 type MainController struct {
