@@ -24,7 +24,7 @@
                         </li>
                     </ul>
                 <a href="#" style="font-size: 16px; color:#F00"><b>忘记密码?</b>
-                    </a><br>
+                    </a><br/>
                     <div class="clear"></div>
                     <input type="submit" value="Login">
             </div>

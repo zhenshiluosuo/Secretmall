@@ -10,16 +10,16 @@ type User struct {
 }
 
 type Cert struct {
-	Id     int     `orm:"auto"`
-	UserId *User   `orm:"rel(fk)"`
-	ItemId *Item   `orm:"rel(fk)"`
+	Id     int   `orm:"auto"`
+	UserId *User `orm:"rel(fk)"`
+	ItemId *Item `orm:"rel(fk)"`
 }
 type Item struct {
 	Id          int `orm:"auto"`
 	Name        string
 	Price       float32
 	Amount      int
-	descirption string `orm:"size(50)"`
+	Descirption string
 }
 
 func init() {

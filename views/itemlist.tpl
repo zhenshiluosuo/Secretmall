@@ -20,5 +20,21 @@
             </div>
         </form>
     </header>
+    <div>
+        <div>
+            <table style="border: 2px solid #ff9000; border-radius:15px 15px 15px 15px; width: 100%">
+                {{range .item}}
+                <tr style="border-bottom:2px solid #ff9000;">
+                    <td><img src="../static/img/item/{{.Descirption}}.jpg" width="150px" height="150px"/></td>
+                    <td><table>
+                        <tr><td>{{.Name}}<br/><br/></td></tr>
+                        <tr><td style="color: red;">￥{{.Price}}</td></tr>
+                        <tr><td style="font-size: 10px;color: darkgrey;"><u>{{.Name}}专卖店</u></td></tr>
+                    </table></td>
+                </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
 </body>
 </html>

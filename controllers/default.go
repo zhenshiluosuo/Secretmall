@@ -5,6 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"secret/models"
 	_ "secret/utils"
+	"strings"
 )
 
 type MainController struct {
@@ -46,5 +47,10 @@ type ChaoshiController struct {
 }
 
 func (this *ChaoshiController) Get() {
+	item := models.Item_List(5, 0)
+	for _, x := range item {
+		x.Descirption = strings.Trim(x.Descirption, " ")
+	}
+	this.Data["item"] = item
 	this.TplName = "itemlist.tpl"
 }
