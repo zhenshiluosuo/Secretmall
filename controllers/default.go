@@ -54,3 +54,11 @@ func (this *ChaoshiController) Get() {
 	this.Data["item"] = item
 	this.TplName = "itemlist.tpl"
 }
+
+type Reg1Controller struct {
+	beego.Controller
+}
+
+func (this *Reg1Controller) Get() {
+	this.TplName = "myaccount/regist.tpl"
+}

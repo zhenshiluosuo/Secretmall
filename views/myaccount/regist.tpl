@@ -14,21 +14,20 @@
                 <span><img src="../static/img/logo.jpg" align="center" height="140px" width="140px"></img></span>
             </div>
             <div class="main-agileinfo">
-                <h2>现在登录</h2>
-                    <input type="text" name="username" class="name" placeholder="请输入您的账户/手机号" required="">
+                <h2>注册用户</h2>
+                    <input type="text" name="username" class="name" placeholder="请输入您的手机号" required="">
                     <input type="password" name="password" class="password" placeholder="请输入密码" required="">
+                    <input type="password" name="password" class="password" placeholder="请确认密码" required="">
                     <ul>
                         <li>
                             <input type="checkbox" id="brand1" value="">
                             <label for="brand1"><span></span>记得我</label>
                         </li>
                     </ul>
-                <a href="#" style="font-size: 16px; color:#F00"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;忘记密码?</b>
+                <a href="#" style="font-size: 16px; color:#F00"><b>查看本站用户协议</b>
                     </a><br/>
-                <a href="myaccount/reg" style="font-size: 16px; color:#F00"><b>成为新用户</b>
-                </a><br/>
                     <div class="clear"></div>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Submit">
             </div>
         </div>
     </form>
