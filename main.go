@@ -4,8 +4,8 @@ import (
 	"github.com/astaxie/beego"
 	//secret/routers
 	//secret/utils
-	_ "secret/Secretmall/routers"
-	_ "secret/Secretmall/utils"
+	_ "secret/routers"
+	_ "secret/utils"
 )
 
 func main() {

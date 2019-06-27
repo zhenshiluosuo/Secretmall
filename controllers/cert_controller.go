@@ -3,7 +3,7 @@ package controllers
 import (
 	"fmt"
 	"github.com/astaxie/beego"
-	"secret/Secretmall/models"
+	"secret/models"
 )
 
 type CertController struct {

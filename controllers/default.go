@@ -1,14 +1,12 @@
 package controllers
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
 	"strings"
-
 	//"secret/models"
-	"secret/Secretmall/models"
+	"secret/models"
 	//_ "secret/utils"
-	_ "secret/Secretmall/utils"
+	_ "secret/utils"
 )
 
 type MainController struct {
@@ -37,7 +35,6 @@ func (this *RegController) Post() {
 
 	if user.Password == Pwd {
 		//验证成功，登录完成
-		fmt.Println(Name + "登录成功" + user.Password)
 		this.SetSession("loginuser", Name)
 		this.Redirect("/", 301)
 	} else {

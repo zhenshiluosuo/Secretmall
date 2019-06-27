@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"secret/Secretmall/controllers"
+	"secret/controllers"
 )
 
 func init() {
