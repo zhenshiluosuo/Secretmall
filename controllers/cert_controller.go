@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
-	"secret/models"
+	"secret/Secretmall/models"
+	"strings"
 )
 
 type CertController struct {
@@ -16,12 +16,17 @@ type CertController struct {
 func (this *CertController) Get() {
 	this.TplName = "cert.tpl"
 	var user models.User
+	if this.GetSession("loginuser") == nil {
+		this.Redirect("/myaccount", 301)
+	}
 	username := this.GetSession("loginuser").(string)
 	user.Name = username
-	var items []models.Item
-	items = models.Check_cert(user)
-	fmt.Println(items)
+	items := models.Check_cert(user)
+	for _, x := range items {
+		x.Descirption = strings.Trim(x.Descirption, " ")
+	}
+	this.Data["item"] = items
 }
 func (this *CertController) Post() {
-	this.TplName = "myaccount/cert.tpl"
+	this.TplName = "cert.tpl"
 }

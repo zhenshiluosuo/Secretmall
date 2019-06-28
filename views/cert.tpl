@@ -8,22 +8,32 @@
     <link rel="stylesheet" href="../static/css/search_style.css">
 </head>
 <body>
-    <header>
-        <form>
-            <div id="container">
-                <div class="search bar6">
-                    <form>
-                        <input type="text" placeholder="试试搜搜：在世真龙" name="cname">
-                        <button type="submit"></button>
-                    </form>
-                </div>
-            </div>
-        </form>
-    </header>
     <div>
         <div>
-
+          <div>
+             <header>
+               <h1>购物车</h1>
+              </header>
+          </div>
+        </div>
+    </div>
+    <div>
+        <div>
+		     <table style="border: 2px solid #ff9000; border-radius:15px 15px 15px 15px; width: 100%">
+                {{range .item}}
+                <tr style="border-bottom:2px solid #ff9000;">
+                    <td><img src="../static/img/item/{{.Descirption}}.jpg" width="150px" height="150px"/></td>
+                    <td><table>
+                        <tr><td>{{.Name}}<br/><br/></td></tr>
+                        <tr><td style="color: red;">￥{{.Price}}</td></tr>
+						<tr><td style="color: orange;">{{.Amount}}</td></tr>
+                        <tr><td style="font-size: 10px;color: darkgrey;"><u>{{.Name}}专卖店</u></td></tr>
+                    </table></td>
+                </tr>
+                {{end}}
+            </table>
         </div>
     </div>
 </body>
 </html>
+

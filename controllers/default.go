@@ -4,9 +4,9 @@ import (
 	"github.com/astaxie/beego"
 	"strings"
 	//"secret/models"
-	"secret/models"
+	"secret/Secretmall/models"
 	//_ "secret/utils"
-	_ "secret/utils"
+	_ "secret/Secretmall/utils"
 )
 
 type MainController struct {
