@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 	"secret/Secretmall/models"
 	"strings"
@@ -16,6 +17,7 @@ type CertController struct {
 func (this *CertController) Get() {
 	this.TplName = "cert.tpl"
 	var user models.User
+	fmt.Println("session", this.GetSession("loginuser"))
 	if this.GetSession("loginuser") == nil {
 		this.Redirect("/myaccount", 301)
 	}
