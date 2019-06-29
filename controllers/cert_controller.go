@@ -19,7 +19,7 @@ func (this *CertController) Get() {
 	var user models.User
 	fmt.Println("session", this.GetSession("loginuser"))
 	if this.GetSession("loginuser") == nil {
-		this.Redirect("/myaccount", 301)
+		this.Redirect("/myaccount", 302)
 	}
 	username := this.GetSession("loginuser").(string)
 	user.Name = username
@@ -31,4 +31,11 @@ func (this *CertController) Get() {
 }
 func (this *CertController) Post() {
 	this.TplName = "cert.tpl"
+	name := this.GetSession("loginuser").(string)
+	id, _ := this.GetInt("item_id")
+	count, _ := this.GetInt("count")
+
+	u := models.Query_single_user(name)
+	models.Add_to_cert(0, u.Id, id, count)
+
 }

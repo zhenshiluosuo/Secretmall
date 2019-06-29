@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
+	"strconv"
 )
 
 /*
@@ -42,6 +43,7 @@ func Add_to_cert(id int, userid int, itemid int, num int) bool {
 	_ = o.QueryTable("Cert").Filter("userid", cert.UserId).Filter("itemid", cert.ItemId).One(&cert)
 	count := cert.Amount + num
 
+	total, _ := o.QueryTable("Cert").Count()
 	fmt.Println(cert.Id)
 	if err_item != nil {
 		fmt.Println("此商品不存在")
@@ -52,7 +54,10 @@ func Add_to_cert(id int, userid int, itemid int, num int) bool {
 		return false
 	} else if cert.Id == 0 {
 		//订单不存在直接添加
-		cert.Id = id
+		total += 1
+		strInt64 := strconv.FormatInt(total, 10)
+		id16, _ := strconv.Atoi(strInt64)
+		cert.Id = id16
 		cert.Amount = count
 		rid, err := o.Insert(&cert)
 		fmt.Println(rid, err)
